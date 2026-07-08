@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Nail Edittt | Press-On Catalog</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#624000",
+            "primary-fixed": "#cde5ff",
+            "secondary-container": "#fda218",
+            "surface-dim": "#dcd9d9",
+            "secondary": "#865300",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c1c7cf",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#9bcbf8",
+            "paper-white": "#F8F8F8",
+            "on-primary-fixed": "#001d32",
+            "surface-bright": "#fcf9f8",
+            "on-tertiary": "#ffffff",
+            "mellow-yellow": "#FFF3BF",
+            "bubblegum-pink": "#FFC9C9",
+            "surface-variant": "#e5e2e1",
+            "tertiary-fixed-dim": "#f3bd71",
+            "electric-orange": "#FFA41B",
+            "lavender-haze": "#E1D5E7",
+            "surface-tint": "#30628a",
+            "on-background": "#1b1c1c",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#291800",
+            "tertiary": "#7e5713",
+            "on-secondary-fixed-variant": "#663e00",
+            "surface-container-high": "#eae7e7",
+            "surface-container-low": "#f6f3f2",
+            "inverse-on-surface": "#f3f0ef",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container": "#f0eded",
+            "inverse-surface": "#303030",
+            "inverse-primary": "#9bcbf8",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#673e00",
+            "surface": "#fcf9f8",
+            "on-surface": "#1b1c1c",
+            "tertiary-container": "#fac477",
+            "mint-green": "#B2F2BB",
+            "on-secondary-fixed": "#2b1700",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#764f0b",
+            "on-error-container": "#93000a",
+            "outline": "#72787f",
+            "tertiary-fixed": "#ffddb2",
+            "background": "#fcf9f8",
+            "primary": "#30628a",
+            "secondary-fixed-dim": "#ffb963",
+            "on-primary-fixed-variant": "#104a70",
+            "secondary-fixed": "#ffddb9",
+            "primary-container": "#a2d2ff",
+            "on-surface-variant": "#41474e",
+            "on-primary-container": "#275b82"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "base": "8px",
+            "container-max": "1440px",
+            "margin-mobile": "16px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["Bricolage Grotesque"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "headline-lg-mobile": ["Bricolage Grotesque"],
+            "display-2xl": ["Bricolage Grotesque"],
+            "body-lg": ["Inter"],
+            "label-caps": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "display-2xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-lg": ["20px", {"lineHeight": "30px", "fontWeight": "400"}],
+            "label-caps": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .sticker-shadow:hover {
+      box-shadow: 4px 4px 0px 0px #FFA41B;
+      transform: translate(-4px, -4px);
+    }
+    .card-pink { background-color: #FFC9C9; }
+    .card-yellow { background-color: #FFF3BF; }
+    .card-lavender { background-color: #E1D5E7; }
+    .card-mint { background-color: #B2F2BB; }
+  </style>
+</head>
+<body class="bg-primary-container text-on-background font-body-md selection:bg-electric-orange selection:text-white">
+
+  <!-- Top Navigation Shell -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-gutter py-base max-w-container-max mx-auto bg-paper-white rounded-full mt-4 mx-4 border-2 border-on-background shadow-[4px_4px_0px_0px_#FFA41B]">
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="font-headline-md text-headline-md text-electric-orange italic tracking-tighter hover:scale-105 transition-transform block">The Nail Edittt</a>
+    </div>
+    <div class="hidden md:flex gap-gutter items-center">
+      <a class="font-label-caps text-label-caps text-electric-orange underline decoration-2 underline-offset-4 hover:text-secondary hover:scale-105 transition-transform" href="shop.html">Shop All</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?shape=Almond">Almond Sets</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?shape=Coffin">Coffin Sets</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?color=Pastel">Pastel Edit</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="shopping-bag-trigger material-symbols-outlined p-2 hover:bg-surface-variant rounded-full transition-colors relative">
+        shopping_bag
+        <span class="cart-badge absolute top-0 right-0 bg-electric-orange text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full border border-on-background hidden">0</span>
+      </button>
+      <button class="material-symbols-outlined p-2 hover:bg-surface-variant rounded-full transition-colors">person</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Canvas -->
+  <main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    
+    <!-- Header Section -->
+    <header class="mb-16">
+      <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4 uppercase">The Fresh Edit</h2>
+      <div class="flex flex-wrap items-center justify-between gap-6">
+        <p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">Hand-painted, custom press-on nails for the modern baddie. High quality, zero damage, maximum vibe.</p>
+        
+        <!-- Filters Section -->
+        <div class="flex flex-wrap gap-4 items-center">
+          <div class="flex items-center gap-2 bg-paper-white border-2 border-on-background p-2 px-4 rounded-xl">
+            <span class="font-label-caps text-label-caps">Shape:</span>
+            <select id="shape-filter" class="bg-transparent border-none focus:ring-0 font-label-caps text-label-caps p-0 pr-8">
+              <option value="All">All Shapes</option>
+              <option value="Almond">Almond</option>
+              <option value="Coffin">Coffin</option>
+              <option value="Stiletto">Stiletto</option>
+              <option value="Square">Square</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2 bg-paper-white border-2 border-on-background p-2 px-4 rounded-xl">
+            <span class="font-label-caps text-label-caps">Color:</span>
+            <select id="color-filter" class="bg-transparent border-none focus:ring-0 font-label-caps text-label-caps p-0 pr-8">
+              <option value="All">All Colors</option>
+              <option value="Red">Red</option>
+              <option value="Pink">Pink</option>
+              <option value="Nude">Nude</option>
+              <option value="Metallic">Metallic</option>
+              <option value="Blue">Blue / Teal</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Custom Request Banner -->
+    <div id="custom-banner" class="hidden mb-12 bg-mellow-yellow border-4 border-on-background p-8 rounded-2xl shadow-[6px_6px_0px_0px_#222222] flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-2">Custom Request Active <span class="material-symbols-outlined text-electric-orange">edit_note</span></h3>
+        <p class="font-body-md text-on-surface-variant max-w-xl">You've requested a Custom Set! Select your style and add notes in checkout, or upload inspiration photos. Our artists will hand-paint it for you.</p>
+      </div>
+      <button id="clear-custom-btn" class="bg-paper-white border-2 border-on-background px-6 py-2 font-label-caps rounded-xl hover:bg-bubblegum-pink transition-all">Cancel Custom</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Cards rendered dynamically -->
+    </div>
+
+    <!-- Sizing Guide Section -->
+    <section id="sizing" class="mt-32 bg-paper-white border-4 border-on-background p-8 md:p-12 rounded-3xl shadow-[8px_8px_0px_0px_#FFA41B]">
+      <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-8 uppercase text-center underline decoration-bubblegum-pink decoration-8 underline-offset-[-4px]">Find Your Fit</h2>
+      <p class="font-body-lg text-body-lg text-center max-w-2xl mx-auto mb-12 text-on-surface-variant">Don't know your size? Measure the widest part of your nail bed with a tape measure or check our size chart details below.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="border-2 border-on-background p-6 rounded-2xl bg-bubblegum-pink flex flex-col justify-between">
+          <h3 class="font-headline-md text-headline-md text-on-background mb-4">XS</h3>
+          <p class="font-label-caps text-label-caps uppercase tracking-wider mb-2">Thum to Pinky</p>
+          <p class="font-headline-md text-xl mb-4">14, 11, 12, 11, 8 mm</p>
+          <span class="text-xs font-body-md text-on-surface-variant">Perfect for extra petite hands.</span>
+        </div>
+        <div class="border-2 border-on-background p-6 rounded-2xl bg-mellow-yellow flex flex-col justify-between">
+          <h3 class="font-headline-md text-headline-md text-on-background mb-4">S</h3>
+          <p class="font-label-caps text-label-caps uppercase tracking-wider mb-2">Thum to Pinky</p>
+          <p class="font-headline-md text-xl mb-4">15, 12, 13, 12, 9 mm</p>
+          <span class="text-xs font-body-md text-on-surface-variant">Standard petite size.</span>
+        </div>
+        <div class="border-2 border-on-background p-6 rounded-2xl bg-lavender-haze flex flex-col justify-between">
+          <h3 class="font-headline-md text-headline-md text-on-background mb-4">M</h3>
+          <p class="font-label-caps text-label-caps uppercase tracking-wider mb-2">Thum to Pinky</p>
+          <p class="font-headline-md text-xl mb-4">16, 13, 14, 13, 10 mm</p>
+          <span class="text-xs font-body-md text-on-surface-variant">Standard medium (most common).</span>
+        </div>
+        <div class="border-2 border-on-background p-6 rounded-2xl bg-mint-green flex flex-col justify-between">
+          <h3 class="font-headline-md text-headline-md text-on-background mb-4">L</h3>
+          <p class="font-label-caps text-label-caps uppercase tracking-wider mb-2">Thum to Pinky</p>
+          <p class="font-headline-md text-xl mb-4">17, 14, 15, 14, 11 mm</p>
+          <span class="text-xs font-body-md text-on-surface-variant">Standard large size.</span>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-surface-container-low border-2 border-on-background p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6">
+        <span class="material-symbols-outlined text-5xl text-electric-orange shrink-0">straighten</span>
+        <div>
+          <h4 class="font-headline-md text-xl mb-1">How to Measure at Home</h4>
+          <p class="font-body-md text-on-surface-variant">Place a piece of tape across the widest part of your nail, mark the edges with a pen, peel it off, and measure the distance between marks in millimeters with a ruler.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full pt-20 pb-10 bg-mint-green border-t-2 border-on-background px-margin-desktop flex flex-col items-center gap-base">
+    <div class="w-full flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+      <div class="flex flex-col gap-4">
+        <h2 class="font-headline-md text-headline-md text-primary">The Nail Edittt</h2>
+        <p class="max-w-xs font-body-md">Luxury press-on nails that look like professional salon sets but take 5 minutes to apply.</p>
+        <div class="flex gap-4">
+          <a class="p-2 border-2 border-on-background rounded-full hover:bg-electric-orange transition-colors" href="https://www.instagram.com/the.nailedittt?igsh=YW9pOGRrZWhqYXNo" target="_blank" rel="noopener noreferrer" title="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+          <a class="p-2 border-2 border-on-background rounded-full hover:bg-electric-orange transition-colors" href="mailto:aimanminhas0@gmail.com" title="Email Us"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-12">
+        <div class="flex flex-col gap-4">
+          <h4 class="font-label-caps text-label-caps uppercase border-b-2 border-on-background pb-1">Shop</h4>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="shop.html">All Collections</a>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="shop.html?color=Pastel">New Arrivals</a>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="shop.html?custom=1">Custom Sets</a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-label-caps text-label-caps uppercase border-b-2 border-on-background pb-1">Help</h4>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="#sizing">Sizing Chart</a>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="#">Shipping</a>
+          <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="w-full border-t border-on-background/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-label-caps text-label-caps text-on-background opacity-60">© 2026 The Nail Edittt. Stay Polished.</p>
+      <div class="flex gap-8">
+        <a class="font-label-caps text-label-caps text-on-background" href="#">Privacy</a>
+        <a class="font-label-caps text-label-caps text-on-background" href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Anchor -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-paper-white border-t-2 border-on-background flex justify-around items-center p-4">
+    <a href="index.html" class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] font-label-caps">Home</span>
+    </a>
+    <a href="shop.html" class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-electric-orange" style="font-variation-settings: 'FILL' 1;">bolt</span>
+      <span class="text-[10px] font-label-caps">Shop</span>
+    </a>
+    <button class="shopping-bag-trigger flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined">shopping_bag</span>
+      <span class="text-[10px] font-label-caps">Cart</span>
+    </button>
+    <button class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined">account_circle</span>
+      <span class="text-[10px] font-label-caps">Account</span>
+    </button>
+  </div>
+
+  <script type="module">
+    import { products } from './products.js';
+    import { addToCart } from './main.js';
+
+    const grid = document.getElementById('product-grid');
+    const shapeFilter = document.getElementById('shape-filter');
+    const colorFilter = document.getElementById('color-filter');
+    const customBanner = document.getElementById('custom-banner');
+    const clearCustomBtn = document.getElementById('clear-custom-btn');
+
+    // Parse URL params
+    const params = new URLSearchParams(window.location.search);
+    let activeShape = params.get('shape') || 'All';
+    let activeColor = params.get('color') || 'All';
+    const isCustomRequest = params.get('custom') === '1';
+
+    // Set initial dropdown values
+    shapeFilter.value = activeShape;
+    colorFilter.value = activeColor;
+
+    if (isCustomRequest) {
+      customBanner.classList.remove('hidden');
+    }
+
+    clearCustomBtn.addEventListener('click', () => {
+      customBanner.classList.add('hidden');
+      // Clear param
+      const url = new URL(window.location);
+      url.searchParams.delete('custom');
+      window.history.pushState({}, '', url);
+    });
+
+    function renderProducts() {
+      const filtered = products.filter(p => {
+        const shapeMatch = activeShape === 'All' || p.shape.toLowerCase() === activeShape.toLowerCase();
+        const colorMatch = activeColor === 'All' || p.color.toLowerCase() === activeColor.toLowerCase();
+        return shapeMatch && colorMatch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full flex flex-col items-center justify-center p-20 border-4 border-dashed border-on-background rounded-2xl bg-paper-white text-center">
+            <span class="material-symbols-outlined text-6xl text-on-surface-variant mb-4">search_off</span>
+            <h3 class="font-headline-md text-headline-md text-on-background mb-2">No Sets Found, Bestie!</h3>
+            <p class="font-body-md text-on-surface-variant max-w-md mb-6">Try clearing your filters or select a different shape or color combo.</p>
+            <button id="reset-filters-btn" class="bg-electric-orange text-white border-2 border-on-background px-6 py-3 font-label-caps rounded-xl shadow-[4px_4px_0px_0px_#222222] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">Clear Filters</button>
+          </div>
+        `;
+        document.getElementById('reset-filters-btn').addEventListener('click', () => {
+          activeShape = 'All';
+          activeColor = 'All';
+          shapeFilter.value = 'All';
+          colorFilter.value = 'All';
+          renderProducts();
+        });
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const badgeHTML = p.badge ? `
+          <div class="absolute top-4 left-4">
+            <span class="bg-electric-orange text-white font-label-caps text-[12px] px-3 py-1 rounded-full border-2 border-on-background">${p.badge}</span>
+          </div>
+        ` : '';
+
+        // Rating stars
+        let starsHTML = '';
+        for (let i = 1; i <= 5; i++) {
+          starsHTML += `<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' ${i <= p.rating ? 1 : 0};">${i <= p.rating ? 'star' : 'star_outline'}</span>`;
+        }
+
+        return `
+          <div class="group relative ${p.cardClass} border-2 border-on-background rounded-xl overflow-hidden transition-all duration-300 sticker-shadow flex flex-col justify-between">
+            <div class="aspect-[4/5] bg-surface-variant relative overflow-hidden">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${p.name}" src="${p.image}"/>
+              ${badgeHTML}
+              <div class="absolute bottom-4 right-4 bg-paper-white/95 backdrop-blur-sm border-2 border-on-background p-1.5 px-3 rounded-lg font-label-caps text-xs">
+                ${p.shape} • ${p.color}
+              </div>
+            </div>
+            <div class="p-6 flex flex-col gap-3 flex-grow justify-between">
+              <div>
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline-md text-headline-md leading-tight text-on-background">${p.name}</h3>
+                  <span class="font-headline-md text-[24px] text-on-background shrink-0 ml-4">${p.price} PKR</span>
+                </div>
+                <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">${p.description}</p>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="flex text-electric-orange">
+                    ${starsHTML}
+                  </div>
+                  <span class="font-label-caps text-[12px] text-on-surface-variant">(${p.reviews})</span>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                  <div class="w-1/3 flex flex-col gap-1">
+                    <label class="text-[10px] font-label-caps uppercase text-on-surface-variant ml-1">Size</label>
+                    <select class="size-select bg-paper-white border border-on-background font-label-caps text-xs p-2 rounded-lg focus:ring-1 focus:ring-electric-orange">
+                      <option value="XS">XS</option>
+                      <option value="S">S</option>
+                      <option value="M" selected>M</option>
+                      <option value="L">L</option>
+                    </select>
+                  </div>
+                  <button class="add-to-cart-btn w-2/3 mt-5 bg-on-background text-white font-label-caps py-3 rounded-xl border-2 border-on-background hover:bg-electric-orange hover:text-on-background transition-colors active:scale-95 flex items-center justify-center gap-2" data-id="${p.id}">
+                    ADD TO CART
+                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Add to cart click handlers
+      grid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          const card = btn.closest('.group');
+          const size = card.querySelector('.size-select').value;
+          addToCart(id, size);
+        });
+      });
+    }
+
+    // Filter Listeners
+    shapeFilter.addEventListener('change', (e) => {
+      activeShape = e.target.value;
+      renderProducts();
+    });
+
+    colorFilter.addEventListener('change', (e) => {
+      activeColor = e.target.value;
+      renderProducts();
+    });
+
+    // Initial render
+    renderProducts();
+
+    // Sizing smooth scroll
+    if (window.location.hash === '#sizing') {
+      setTimeout(() => {
+        document.getElementById('sizing').scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  </script>
+</body>
+</html>

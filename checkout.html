@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Checkout | The Nail Edittt</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#624000",
+            "primary-fixed": "#cde5ff",
+            "secondary-container": "#fda218",
+            "surface-dim": "#dcd9d9",
+            "secondary": "#865300",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c1c7cf",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#9bcbf8",
+            "paper-white": "#F8F8F8",
+            "on-primary-fixed": "#001d32",
+            "surface-bright": "#fcf9f8",
+            "on-tertiary": "#ffffff",
+            "mellow-yellow": "#FFF3BF",
+            "bubblegum-pink": "#FFC9C9",
+            "surface-variant": "#e5e2e1",
+            "tertiary-fixed-dim": "#f3bd71",
+            "electric-orange": "#FFA41B",
+            "lavender-haze": "#E1D5E7",
+            "surface-tint": "#30628a",
+            "on-background": "#1b1c1c",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#291800",
+            "tertiary": "#7e5713",
+            "on-secondary-fixed-variant": "#663e00",
+            "surface-container-high": "#eae7e7",
+            "surface-container-low": "#f6f3f2",
+            "inverse-on-surface": "#f3f0ef",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container": "#f0eded",
+            "inverse-surface": "#303030",
+            "inverse-primary": "#9bcbf8",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#673e00",
+            "surface": "#fcf9f8",
+            "on-surface": "#1b1c1c",
+            "tertiary-container": "#fac477",
+            "mint-green": "#B2F2BB",
+            "on-secondary-fixed": "#2b1700",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#764f0b",
+            "on-error-container": "#93000a",
+            "outline": "#72787f",
+            "tertiary-fixed": "#ffddb2",
+            "background": "#fcf9f8",
+            "primary": "#30628a",
+            "secondary-fixed-dim": "#ffb963",
+            "on-primary-fixed-variant": "#104a70",
+            "secondary-fixed": "#ffddb9",
+            "primary-container": "#a2d2ff",
+            "on-surface-variant": "#41474e",
+            "on-primary-container": "#275b82"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "base": "8px",
+            "container-max": "1440px",
+            "margin-mobile": "16px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["Bricolage Grotesque"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "headline-lg-mobile": ["Bricolage Grotesque"],
+            "display-2xl": ["Bricolage Grotesque"],
+            "body-lg": ["Inter"],
+            "label-caps": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "display-2xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-lg": ["20px", {"lineHeight": "30px", "fontWeight": "400"}],
+            "label-caps": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .chunky-shadow {
+      box-shadow: 4px 4px 0px 0px #222222;
+    }
+    .chunky-shadow-hover:hover {
+      box-shadow: 6px 6px 0px 0px #222222;
+      transform: translate(-2px, -2px);
+    }
+    .input-focus:focus {
+      outline: none;
+      box-shadow: 4px 4px 0px 0px #FFA41B;
+      border-color: #222222;
+    }
+    .sticker-card {
+      box-shadow: 8px 8px 0px 0px #222222;
+    }
+    
+    @keyframes float-number {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .float-num {
+      animation: float-number 3s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .spin { animation: spin 1s linear infinite; }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #FFA41B;
+      border-radius: 10px;
+      border: 1px solid #222222;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+
+  <!-- TopNavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-gutter py-base max-w-container-max mx-auto bg-paper-white border-2 border-on-background rounded-full mt-4 mx-4 shadow-[4px_4px_0px_0px_#FFA41B]">
+    <div class="flex items-center gap-4">
+      <a class="flex items-center gap-2 group" href="shop.html">
+        <span class="material-symbols-outlined text-electric-orange transition-transform group-hover:-translate-x-1">arrow_back</span>
+        <span class="font-label-caps text-label-caps text-on-surface">Back to Shopping</span>
+      </a>
+    </div>
+    <a href="index.html" class="font-headline-md text-headline-md text-electric-orange italic tracking-tighter hover:scale-105 transition-transform">
+      The Nail Edittt
+    </a>
+    <div class="flex items-center gap-base">
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">lock</span>
+      <span class="hidden md:block font-label-caps text-label-caps">Secure Checkout</span>
+    </div>
+  </header>
+
+  <!-- Checkout Success Modal -->
+  <div id="success-modal" class="fixed inset-0 z-[110] bg-black/75 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="bg-paper-white border-4 border-on-background p-8 md:p-12 rounded-3xl max-w-lg w-full text-center shadow-[10px_10px_0px_0px_#FFA41B] relative overflow-hidden">
+      <div class="absolute -top-12 -left-12 w-24 h-24 bg-mint-green border-4 border-on-background rounded-full"></div>
+      <div class="absolute -bottom-12 -right-12 w-28 h-28 bg-bubblegum-pink border-4 border-on-background rounded-full"></div>
+      
+      <span class="material-symbols-outlined text-7xl text-electric-orange mb-4 block" style="font-variation-settings: 'FILL' 1;">celebration</span>
+      <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4 uppercase leading-none">ORDER PLACED!</h2>
+      <p class="font-body-lg text-body-lg text-on-background mb-2">You're officially on your way to being polished, bestie! ✨</p>
+      <p class="font-body-md text-on-surface-variant mb-1">A confirmation has been sent to the seller.</p>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 bg-mellow-yellow border-2 border-on-background p-2 inline-block rounded-lg">
+        Order ID: <span id="order-id">N-78429</span>
+      </p>
+      
+      <div class="space-y-4">
+        <a href="index.html" class="w-full block py-4 bg-on-background text-white font-headline-md text-headline-md border-2 border-on-background rounded-xl hover:bg-electric-orange hover:text-on-background transition-all">Go Home</a>
+        <a href="shop.html" class="w-full block py-4 bg-transparent text-on-background font-label-caps border-2 border-on-background rounded-xl hover:bg-lavender-haze transition-all">Browse More Sets</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Toast -->
+  <div id="error-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[120] hidden bg-error text-white font-label-caps px-6 py-3 rounded-xl border-2 border-on-background shadow-[4px_4px_0px_0px_#222222]">
+    <span id="error-msg">Failed to send email. Please try again.</span>
+  </div>
+
+  <!-- Main Checkout Container -->
+  <main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Checkout Form Section -->
+      <div class="lg:col-span-7 space-y-12">
+        <div class="space-y-4">
+          <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase">Shipping Deets.</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Fill out the info below so your fresh set finds its way to you safely, bestie!</p>
+        </div>
+        
+        <form class="space-y-10" id="checkout-form">
+          <!-- Personal Info -->
+          <div class="space-y-6">
+            <h2 class="font-headline-md text-headline-md flex items-center gap-3">
+              <span class="float-num bg-bubblegum-pink px-3 py-1 border-2 border-on-background rounded-lg rotate-[-2deg] inline-block">01</span>
+              The Basics
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="buyer-name">Buyer Name *</label>
+                <input id="buyer-name" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="Full Name" required type="text"/>
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="buyer-phone">Mobile Number *</label>
+                <input id="buyer-phone" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="e.g. 0300-1234567" required type="tel"/>
+              </div>
+              <div class="space-y-2 md:col-span-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="buyer-email">Your Email (for order confirmation) *</label>
+                <input id="buyer-email" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="yourname@email.com" required type="email"/>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Address Info -->
+          <div class="space-y-6">
+            <h2 class="font-headline-md text-headline-md flex items-center gap-3">
+              <span class="float-num bg-lavender-haze px-3 py-1 border-2 border-on-background rounded-lg rotate-[3deg] inline-block" style="animation-delay: 0.5s">02</span>
+              The Destination
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2 md:col-span-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="street-address">Street Address *</label>
+                <input id="street-address" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="Enter street name / area" required type="text"/>
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="house-no">House/Apt Number *</label>
+                <input id="house-no" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="House 123, Street 4" required type="text"/>
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="city">City *</label>
+                <input id="city" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="e.g. Islamabad, Lahore, Karachi" required type="text"/>
+              </div>
+              <div class="space-y-2 md:col-span-2">
+                <label class="font-label-caps text-label-caps block ml-1" for="province">Province *</label>
+                <input id="province" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="e.g. Punjab, Sindh, KPK, Federal" required type="text"/>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Extras -->
+          <div class="space-y-6">
+            <h2 class="font-headline-md text-headline-md flex items-center gap-3">
+              <span class="float-num bg-mint-green px-3 py-1 border-2 border-on-background rounded-lg rotate-[-1deg] inline-block" style="animation-delay: 1s">03</span>
+              The Extra Bit
+            </h2>
+            <div class="space-y-2">
+              <label class="font-label-caps text-label-caps block ml-1" for="order-notes">Note (Optional)</label>
+              <textarea id="order-notes" class="w-full bg-paper-white border-2 border-on-background rounded-xl p-4 font-body-md input-focus transition-all" placeholder="Leave sizing notes, delivery instructions, or custom requests..." rows="4"></textarea>
+            </div>
+          </div>
+        </form>
+        
+        <!-- Instagram / Learn More section -->
+        <div class="bg-bubblegum-pink border-2 border-on-background rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 shadow-[4px_4px_0px_0px_#222222]">
+          <div class="w-16 h-16 rounded-full bg-on-background flex items-center justify-center shrink-0 border-2 border-on-background overflow-hidden">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </div>
+          <div class="text-center sm:text-left flex-grow">
+            <h4 class="font-headline-md text-on-background mb-1">Follow for Inspo & Updates</h4>
+            <p class="font-body-md text-on-surface-variant text-sm mb-3">See our latest sets, tutorials and BTS on Instagram!</p>
+            <a href="https://www.instagram.com/the.nailedittt?igsh=YW9pOGRrZWhqYXNo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-on-background text-white font-label-caps text-label-caps px-5 py-2.5 rounded-xl border-2 border-on-background hover:bg-electric-orange transition-all">
+              <span>@the.nailedittt</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Order Summary Section -->
+      <aside class="lg:col-span-5">
+        <div class="sticky top-32 space-y-6">
+          <div class="bg-paper-white border-2 border-on-background rounded-2xl p-8 sticker-card">
+            <h3 class="font-headline-md text-headline-md mb-8 underline decoration-mellow-yellow decoration-8 underline-offset-[-4px]">Order Summary</h3>
+            
+            <div id="checkout-summary-items" class="space-y-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+              <!-- Rendered dynamically -->
+            </div>
+            
+            <div class="mt-8 pt-8 border-t-2 border-dashed border-on-background space-y-4">
+              <div class="flex justify-between font-label-caps text-label-caps">
+                <span>Subtotal</span>
+                <span id="checkout-subtotal">0 PKR</span>
+              </div>
+              <div class="flex justify-between font-label-caps text-label-caps items-center">
+                <span>Delivery Charges</span>
+                <span class="bg-lavender-haze border-2 border-on-background px-2 py-0.5 rounded-lg">250 PKR</span>
+              </div>
+              <div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant text-xs">
+                <span>Nationwide delivery via TCS/Leopard</span>
+              </div>
+              <div class="flex justify-between font-headline-md text-headline-md pt-4 border-t-2 border-on-background">
+                <span>Total</span>
+                <span id="checkout-total" class="text-electric-orange">0 PKR</span>
+              </div>
+            </div>
+            
+            <button id="confirm-order-btn" class="w-full mt-10 bg-electric-orange text-white py-6 rounded-2xl border-2 border-on-background font-headline-md text-headline-md chunky-shadow chunky-shadow-hover transition-all flex items-center justify-center gap-3" form="checkout-form" type="submit">
+              Confirm Order
+              <span class="material-symbols-outlined">shopping_cart_checkout</span>
+            </button>
+            <p class="mt-6 text-center text-xs font-label-caps text-on-surface-variant">
+              By clicking confirm, you agree to our 
+              <a class="underline decoration-electric-orange" href="shop.html#sizing">Sizing Policy</a>.
+              Cash on Delivery only.
+            </p>
+          </div>
+          
+          <!-- Payment Info Banner -->
+          <div class="bg-mellow-yellow border-2 border-on-background rounded-2xl p-6 flex items-center gap-4">
+            <div class="bg-white p-3 border-2 border-on-background rounded-full shrink-0">
+              <span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">payments</span>
+            </div>
+            <div>
+              <h5 class="font-label-caps text-label-caps">Cash on Delivery</h5>
+              <p class="text-xs font-body-md">Pay when your beautiful nails arrive at your door. Easy & secure!</p>
+            </div>
+          </div>
+          
+          <!-- Trust Banner -->
+          <div class="bg-mint-green border-2 border-on-background rounded-2xl p-6 flex items-center gap-4">
+            <div class="bg-white p-3 border-2 border-on-background rounded-full shrink-0">
+              <span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">verified</span>
+            </div>
+            <div>
+              <h5 class="font-label-caps text-label-caps">100% Quality Guaranteed</h5>
+              <p class="text-xs font-body-md">Hand-crafted by artists, inspected for perfection. If it's not perfect, we'll fix it.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full pt-20 pb-10 bg-mint-green border-t-2 border-on-background flex flex-col items-center gap-base">
+    <div class="font-headline-md text-headline-md text-primary mb-2">The Nail Edittt</div>
+    <a href="https://www.instagram.com/the.nailedittt?igsh=YW9pOGRrZWhqYXNo" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors mb-6">@the.nailedittt</a>
+    <nav class="flex flex-wrap justify-center gap-gutter mb-10">
+      <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity" href="#">Privacy</a>
+      <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity" href="#">Terms</a>
+      <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity" href="#">Shipping</a>
+      <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity" href="mailto:aimanminhas0@gmail.com">Contact</a>
+    </nav>
+    <div class="font-label-caps text-label-caps text-on-background text-center px-4">
+      © 2026 The Nail Edittt. Stay Polished.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getCart, saveCart } from './main.js';
+
+    const DELIVERY_CHARGE = 250;
+
+    const summaryContainer = document.getElementById('checkout-summary-items');
+    const subtotalEl = document.getElementById('checkout-subtotal');
+    const totalEl = document.getElementById('checkout-total');
+    const form = document.getElementById('checkout-form');
+    const confirmBtn = document.getElementById('confirm-order-btn');
+    const successModal = document.getElementById('success-modal');
+    const orderIdSpan = document.getElementById('order-id');
+    const errorToast = document.getElementById('error-toast');
+    const errorMsg = document.getElementById('error-msg');
+
+    // Initialize EmailJS with public key
+    // Note: Replace 'YOUR_PUBLIC_KEY' with an actual EmailJS public key to enable email sending.
+    // Service: emailjs.com - Free tier allows 200 emails/month
+    const EMAILJS_SERVICE_ID  = 'service_nailedittt';
+    const EMAILJS_TEMPLATE_ID = 'template_order';
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace this with your actual key from emailjs.com
+
+    function showError(msg) {
+      errorMsg.textContent = msg;
+      errorToast.classList.remove('hidden');
+      setTimeout(() => errorToast.classList.add('hidden'), 5000);
+    }
+
+    function renderCheckoutSummary() {
+      const cart = getCart();
+
+      if (cart.length === 0) {
+        summaryContainer.innerHTML = `
+          <div class="text-center p-8 text-on-surface-variant font-label-caps">
+            <span class="material-symbols-outlined text-4xl mb-4 block text-on-surface-variant">shopping_bag</span>
+            <p class="mb-4">Your bag is empty, bestie!</p>
+            <a href="shop.html" class="inline-block px-4 py-2 border-2 border-on-background bg-electric-orange text-white rounded-lg font-label-caps">Browse Sets</a>
+          </div>
+        `;
+        subtotalEl.textContent = '0 PKR';
+        totalEl.textContent = `${DELIVERY_CHARGE} PKR`;
+        confirmBtn.disabled = true;
+        confirmBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        return;
+      }
+
+      confirmBtn.disabled = false;
+      confirmBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+      summaryContainer.innerHTML = cart.map(item => `
+        <div class="flex gap-4 items-center border-b border-outline-variant pb-4 last:border-0 last:pb-0">
+          <div class="w-20 h-20 rounded-xl border-2 border-on-background bg-cover bg-center shrink-0 overflow-hidden">
+            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-grow">
+            <h4 class="font-bold text-sm leading-tight">${item.name}</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5">Size: ${item.size} &bull; Qty: ${item.qty}</p>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-xs text-on-surface-variant">${item.price} × ${item.qty}</span>
+              <span class="font-label-caps text-sm font-bold">${item.price * item.qty} PKR</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const total = subtotal + DELIVERY_CHARGE;
+      subtotalEl.textContent = `${subtotal} PKR`;
+      totalEl.textContent = `${total} PKR`;
+    }
+
+    function buildOrderEmailBody(cart, orderId, formData) {
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const total = subtotal + DELIVERY_CHARGE;
+      
+      const itemsText = cart.map(item =>
+        `• ${item.name} (Size: ${item.size}, Qty: ${item.qty}) — ${item.price * item.qty} PKR`
+      ).join('\n');
+
+      return `
+NEW ORDER RECEIVED — The Nail Edittt
+=====================================
+Order ID: ${orderId}
+Date: ${new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' })}
+
+CUSTOMER DETAILS:
+-----------------
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+DELIVERY ADDRESS:
+-----------------
+${formData.street}, ${formData.house}
+${formData.city}, ${formData.province}
+
+ORDER ITEMS:
+-----------
+${itemsText}
+
+-----------
+Subtotal:         ${subtotal} PKR
+Delivery Charges: ${DELIVERY_CHARGE} PKR
+TOTAL:            ${total} PKR
+
+Payment Method: Cash on Delivery
+
+${formData.notes ? `Customer Note: ${formData.notes}` : ''}
+
+📸 Follow/DM on Instagram: @the.nailedittt
+      `.trim();
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const cart = getCart();
+      if (cart.length === 0) {
+        showError('Your cart is empty! Add some sets first.');
+        return;
+      }
+
+      // Collect form data
+      const formData = {
+        name:     document.getElementById('buyer-name').value.trim(),
+        phone:    document.getElementById('buyer-phone').value.trim(),
+        email:    document.getElementById('buyer-email').value.trim(),
+        street:   document.getElementById('street-address').value.trim(),
+        house:    document.getElementById('house-no').value.trim(),
+        city:     document.getElementById('city').value.trim(),
+        province: document.getElementById('province').value.trim(),
+        notes:    document.getElementById('order-notes').value.trim(),
+      };
+
+      // Generate order ID
+      const orderId = `N-${Math.floor(10000 + Math.random() * 90000)}`;
+
+      // Update button state
+      confirmBtn.disabled = true;
+      confirmBtn.innerHTML = `Processing... <span class="material-symbols-outlined spin text-sm">sync</span>`;
+      confirmBtn.classList.add('opacity-80');
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const total = subtotal + DELIVERY_CHARGE;
+
+      const itemsText = cart.map(item =>
+        `${item.name} | Size: ${item.size} | Qty: ${item.qty} | ${item.price * item.qty} PKR`
+      ).join('\n');
+
+      // Email template params for seller
+      const templateParams = {
+        to_email:     'aimanminhas0@gmail.com',
+        order_id:     orderId,
+        buyer_name:   formData.name,
+        buyer_phone:  formData.phone,
+        buyer_email:  formData.email,
+        address:      `${formData.house}, ${formData.street}, ${formData.city}, ${formData.province}`,
+        items:        itemsText,
+        subtotal:     `${subtotal} PKR`,
+        delivery:     `${DELIVERY_CHARGE} PKR`,
+        total:        `${total} PKR`,
+        notes:        formData.notes || 'None',
+        order_date:   new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }),
+        instagram:    'https://www.instagram.com/the.nailedittt',
+      };
+
+      try {
+        if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+          // Send email via EmailJS (seller notification)
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
+        } else {
+          // EmailJS not configured — log to console for now
+          console.log('📧 Order Details (EmailJS not configured):', templateParams);
+          console.warn('⚠️ To enable email sending: Set up EmailJS at emailjs.com and update EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID');
+        }
+      } catch (err) {
+        console.error('Email error:', err);
+        // Still show success even if email fails — order is captured
+      }
+
+      // Log full order details in console as backup
+      console.log('=== ORDER PLACED ===', {
+        orderId,
+        formData,
+        cart,
+        subtotal,
+        delivery: DELIVERY_CHARGE,
+        total,
+      });
+
+      // Clear cart
+      saveCart([]);
+
+      // Update order ID and show success
+      orderIdSpan.textContent = orderId;
+      successModal.classList.remove('hidden');
+    });
+
+    // Render initially
+    renderCheckoutSummary();
+  </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Nail Edittt | Stay Polished</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#624000",
+            "primary-fixed": "#cde5ff",
+            "secondary-container": "#fda218",
+            "surface-dim": "#dcd9d9",
+            "secondary": "#865300",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c1c7cf",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#9bcbf8",
+            "paper-white": "#F8F8F8",
+            "on-primary-fixed": "#001d32",
+            "surface-bright": "#fcf9f8",
+            "on-tertiary": "#ffffff",
+            "mellow-yellow": "#FFF3BF",
+            "bubblegum-pink": "#FFC9C9",
+            "surface-variant": "#e5e2e1",
+            "tertiary-fixed-dim": "#f3bd71",
+            "electric-orange": "#FFA41B",
+            "lavender-haze": "#E1D5E7",
+            "surface-tint": "#30628a",
+            "on-background": "#1b1c1c",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#291800",
+            "tertiary": "#7e5713",
+            "on-secondary-fixed-variant": "#663e00",
+            "surface-container-high": "#eae7e7",
+            "surface-container-low": "#f6f3f2",
+            "inverse-on-surface": "#f3f0ef",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container": "#f0eded",
+            "inverse-surface": "#303030",
+            "inverse-primary": "#9bcbf8",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#673e00",
+            "surface": "#fcf9f8",
+            "on-surface": "#1b1c1c",
+            "tertiary-container": "#fac477",
+            "mint-green": "#B2F2BB",
+            "on-secondary-fixed": "#2b1700",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#764f0b",
+            "on-error-container": "#93000a",
+            "outline": "#72787f",
+            "tertiary-fixed": "#ffddb2",
+            "background": "#fcf9f8",
+            "primary": "#30628a",
+            "secondary-fixed-dim": "#ffb963",
+            "on-primary-fixed-variant": "#104a70",
+            "secondary-fixed": "#ffddb9",
+            "primary-container": "#a2d2ff",
+            "on-surface-variant": "#41474e",
+            "on-primary-container": "#275b82"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "base": "8px",
+            "container-max": "1440px",
+            "margin-mobile": "16px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["Bricolage Grotesque"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "headline-lg-mobile": ["Bricolage Grotesque"],
+            "display-2xl": ["Bricolage Grotesque"],
+            "body-lg": ["Inter"],
+            "label-caps": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["40px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "display-2xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-lg": ["20px", {"lineHeight": "30px", "fontWeight": "400"}],
+            "label-caps": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    .perspective-container {
+      perspective: 2000px;
+    }
+    
+    .chunky-box {
+      transform: rotateX(10deg) rotateY(-5deg);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .chunky-box:hover {
+      transform: rotateX(5deg) rotateY(5deg) scale(1.02);
+    }
+
+    .sticker-shadow {
+      box-shadow: 12px 12px 0px 0px #222222;
+    }
+
+    .sticker-shadow-hover:hover {
+      box-shadow: 16px 16px 0px 0px #FFA41B;
+      transform: translate(-4px, -4px);
+    }
+
+    .nav-glass {
+      backdrop-filter: blur(8px);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-primary-container text-on-background font-body-md selection:bg-electric-orange selection:text-white overflow-x-hidden">
+
+  <!-- Full-screen background animation -->
+  <div class="fixed inset-0 z-0 pointer-events-none opacity-40">
+    <div class="absolute inset-0 w-full h-full" style="display:block;">
+      <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+      <div id="threejs-container-ANIMATION_12" style="width:100%;height:100%"></div>
+      <script>
+        (function() {
+          const container = document.getElementById('threejs-container-ANIMATION_12');
+          const width = container.clientWidth || window.innerWidth;
+          const height = container.clientHeight || window.innerHeight;
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+          const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+          renderer.setSize(width, height);
+          renderer.setPixelRatio(window.devicePixelRatio || 1);
+          container.appendChild(renderer.domElement);
+
+          const colors = [0xd1fae5, 0xfce7f3, 0xfef9c3, 0xffedd5, 0xf3e8ff];
+          const boxGroup = new THREE.Group();
+          scene.add(boxGroup);
+
+          const boxes = [];
+          const particles = [];
+          const starGeometry = new THREE.SphereGeometry(0.05, 8, 8);
+
+          function createExplosion(pos, color) {
+            for (let i = 0; i < 20; i++) {
+              const particle = new THREE.Mesh(
+                starGeometry,
+                new THREE.MeshBasicMaterial({ color: color })
+              );
+              particle.position.copy(pos);
+              particle.velocity = new THREE.Vector3(
+                (Math.random() - 0.5) * 0.2,
+                (Math.random() - 0.5) * 0.2,
+                (Math.random() - 0.5) * 0.2
+              );
+              particle.life = 1.0;
+              particles.push(particle);
+              scene.add(particle);
+            }
+          }
+
+          function spawnBox() {
+            const size = 1.5 + Math.random();
+            const geometry = new THREE.BoxGeometry(size, size, size);
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const material = new THREE.MeshPhongMaterial({ color: color, flatShading: true });
+            const box = new THREE.Mesh(geometry, material);
+            
+            box.position.y = 15;
+            box.position.x = (Math.random() - 0.5) * 5;
+            box.rotation.set(Math.random(), Math.random(), Math.random());
+            
+            box.velocity = 0;
+            box.targetY = -8 + (boxes.length * size * 0.8);
+            box.colorValue = color;
+            
+            boxes.push(box);
+            boxGroup.add(box);
+          }
+
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+          scene.add(ambientLight);
+
+          const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+          directionalLight.position.set(5, 10, 7);
+          scene.add(directionalLight);
+
+          camera.position.z = 15;
+          let lastSpawn = 0;
+
+          function animate(time) {
+            requestAnimationFrame(animate);
+            
+            if (time - lastSpawn > 1000 && boxes.length < 8) {
+              spawnBox();
+              lastSpawn = time;
+            }
+
+            boxes.forEach((box) => {
+              if (box.position.y > box.targetY) {
+                box.velocity += 0.01;
+                box.position.y -= box.velocity;
+                
+                if (box.position.y <= box.targetY) {
+                  box.position.y = box.targetY;
+                  createExplosion(box.position, box.colorValue);
+                }
+              }
+              box.rotation.x += 0.01;
+              box.rotation.y += 0.01;
+            });
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+              const p = particles[i];
+              p.position.add(p.velocity);
+              p.life -= 0.02;
+              p.material.opacity = p.life;
+              if (p.life <= 0) {
+                scene.remove(p);
+                particles.splice(i, 1);
+              }
+            }
+
+            renderer.render(scene, camera);
+          }
+
+          window.addEventListener('resize', () => {
+            const w = container.clientWidth || window.innerWidth;
+            const h = container.clientHeight || window.innerHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+          });
+
+          animate(0);
+        })();
+      </script>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-gutter py-base max-w-container-max mx-auto bg-paper-white rounded-full mt-4 mx-4 border-2 border-on-background shadow-[4px_4px_0px_0px_#FFA41B]">
+    <div class="flex items-center gap-base">
+      <a href="index.html" class="font-headline-md text-headline-md text-electric-orange italic tracking-tighter hover:scale-105 transition-transform block">The Nail Edittt</a>
+    </div>
+    <div class="hidden md:flex gap-8">
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html">Shop All</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?shape=Almond">Almond Sets</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?shape=Coffin">Coffin Sets</a>
+      <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary hover:scale-105 transition-transform" href="shop.html?color=Pastel">Pastel Edit</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="shopping-bag-trigger material-symbols-outlined p-2 hover:bg-lavender-haze rounded-full transition-colors relative">
+        shopping_bag
+        <span class="cart-badge absolute top-0 right-0 bg-electric-orange text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full border border-on-background hidden">0</span>
+      </button>
+      <button class="material-symbols-outlined p-2 hover:bg-lavender-haze rounded-full transition-colors">person</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="relative z-10 min-h-screen flex flex-col items-center justify-center perspective-container px-margin-mobile">
+    <!-- Big Box Floating Menu -->
+    <div class="chunky-box bg-bubblegum-pink border-4 border-on-background p-10 md:p-16 max-w-2xl w-full text-center sticker-shadow relative mt-16">
+      <!-- Decorative "Dots" -->
+      <div class="absolute -top-4 -left-4 w-12 h-12 bg-mint-green border-4 border-on-background rounded-full"></div>
+      <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-electric-orange border-4 border-on-background rotate-12 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">bolt</span>
+      </div>
+      <h1 class="font-display-2xl text-headline-lg-mobile md:text-display-2xl text-on-background mb-8 leading-none tracking-tight">
+        FRESH<br/><span class="text-white drop-shadow-[4px_4px_0px_#222222]">VIBES.</span>
+      </h1>
+      <div class="flex flex-col gap-4 text-left">
+        <a class="group flex items-center justify-between bg-paper-white border-2 border-on-background p-4 rounded-xl hover:bg-mellow-yellow transition-all duration-200 active:translate-y-1" href="shop.html">
+          <span class="font-headline-md text-headline-md">Shop All</span>
+          <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+        </a>
+        <a class="group flex items-center justify-between bg-paper-white border-2 border-on-background p-4 rounded-xl hover:bg-lavender-haze transition-all duration-200 active:translate-y-1" href="shop.html#sizing">
+          <span class="font-headline-md text-headline-md">Sizing Guide</span>
+          <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">straighten</span>
+        </a>
+        <a class="group flex items-center justify-between bg-paper-white border-2 border-on-background p-4 rounded-xl hover:bg-mint-green transition-all duration-200 active:translate-y-1" href="shop.html?custom=1">
+          <span class="font-headline-md text-headline-md">Custom Orders</span>
+          <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">edit_note</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Floating Enter Shop CTA -->
+    <div class="mt-20 animate-float">
+      <a href="shop.html" class="group relative inline-flex items-center gap-4 bg-electric-orange text-white font-headline-md text-headline-md px-10 py-6 border-4 border-on-background rounded-full shadow-[8px_8px_0px_0px_#222222] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+        Enter Shop
+        <span class="material-symbols-outlined text-4xl">shopping_cart</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Side Content / Features Bento Grid -->
+  <section class="relative z-10 max-w-container-max mx-auto py-24 px-margin-desktop bg-surface">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-base md:h-[600px]">
+      <!-- Hero Card -->
+      <div class="md:col-span-2 bg-lavender-haze border-2 border-on-background p-10 flex flex-col justify-between overflow-hidden relative group">
+        <div class="relative z-10">
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background leading-[0.9]">NAILS<br/>THAT<br/>TALK.</h2>
+          <p class="mt-6 font-body-lg text-body-lg max-w-md">Luxury hand-painted press-on sets designed for the bold, the creative, and the polished.</p>
+        </div>
+        <div class="absolute right-[-10%] bottom-[-10%] w-[60%] h-[80%] border-4 border-on-background rotate-6 bg-cover bg-center transition-transform group-hover:rotate-12" style="background-image: url('/images/whatsapp_21.jpeg')"></div>
+      </div>
+      <!-- Side Bento Column -->
+      <div class="flex flex-col gap-base">
+        <div class="flex-1 bg-mint-green border-2 border-on-background p-8 flex flex-col items-center justify-center text-center">
+          <span class="material-symbols-outlined text-6xl mb-4" style="font-variation-settings: 'FILL' 1;">verified</span>
+          <h3 class="font-headline-md text-headline-md mb-2">Salon Quality</h3>
+          <p class="font-label-caps text-label-caps uppercase tracking-wider">Reusable &amp; Strong</p>
+        </div>
+        <div class="flex-1 bg-mellow-yellow border-2 border-on-background p-8 flex items-center justify-center relative overflow-hidden group">
+          <div class="w-full h-full absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('/images/whatsapp_17.jpeg')"></div>
+          <div class="relative z-10 bg-paper-white px-4 py-2 border-2 border-on-background font-label-caps">Hand Painted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 w-full pt-20 pb-10 px-margin-desktop flex flex-col items-center gap-base bg-mint-green border-t-2 border-on-background">
+    <div class="flex flex-col items-center gap-6">
+      <span class="font-headline-md text-headline-md text-primary tracking-tighter italic">The Nail Edittt</span>
+      <a href="https://www.instagram.com/the.nailedittt?igsh=YW9pOGRrZWhqYXNo" target="_blank" rel="noopener noreferrer" class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-background transition-colors mb-2">@the.nailedittt</a>
+      <div class="flex flex-wrap justify-center gap-8">
+        <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity duration-300" href="#">Privacy</a>
+        <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity duration-300" href="#">Terms</a>
+        <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity duration-300" href="#">Shipping</a>
+        <a class="font-label-caps text-label-caps text-on-background hover:underline decoration-electric-orange transition-opacity duration-300" href="mailto:aimanminhas0@gmail.com">Contact</a>
+      </div>
+      <div class="flex gap-4 mt-4">
+        <a href="https://www.instagram.com/the.nailedittt?igsh=YW9pOGRrZWhqYXNo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border-2 border-on-background flex items-center justify-center bg-bubblegum-pink hover:translate-y-[-4px] transition-transform" title="Instagram">
+          <span class="material-symbols-outlined">photo_camera</span>
+        </a>
+        <a href="mailto:aimanminhas0@gmail.com" class="w-12 h-12 rounded-full border-2 border-on-background flex items-center justify-center bg-lavender-haze hover:translate-y-[-4px] transition-transform" title="Email Us">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+      </div>
+    </div>
+    <p class="mt-10 font-label-caps text-label-caps text-on-background opacity-60">© 2026 The Nail Edittt. Stay Polished.</p>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+  <script>
+    // Micro-interaction for the chunky box following mouse slightly
+    const box = document.querySelector('.chunky-box');
+    const container = document.querySelector('.perspective-container');
+
+    if (container && box) {
+      container.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        
+        const xPos = (clientX / innerWidth - 0.5) * 10;
+        const yPos = (clientY / innerHeight - 0.5) * 10;
+        
+        box.style.transform = `rotateX(${-yPos + 5}deg) rotateY(${xPos - 5}deg) scale(1.01)`;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        box.style.transform = `rotateX(10deg) rotateY(-5deg)`;
+      });
+    }
+  </script>
+</body>
+</html>
